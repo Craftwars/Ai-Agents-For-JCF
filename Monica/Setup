@@ -1,0 +1,79 @@
+⚙️ OPTIMAL SETUP FOR “MONICA” INSIDE GHL
+🔹 1. Voice & Language Settings
+
+When editing Monica’s AI Agent Settings:
+
+Voice Language: Spanish (United States)
+
+Voice: Choose Lucía or Camila (both sound natural, not robotic).
+
+AI Model: GPT-4o mini or GPT-4o (if available under your GHL plan).
+
+Confidence Level: Medium → ensures she confirms details without over-talking.
+
+🔹 2. Trigger Logic in GHL
+
+You can trigger Monica from any of these:
+
+Pipeline Stage: e.g. Stage = New Spanish Lead
+
+Tag: e.g. Tag = Spanish Lead
+
+Form Submission: Spanish version of your quote form
+
+➡️ Workflow Example:
+
+Trigger: Tag Added – “Spanish Lead”
+
+Action: Run AI Conversation – Agent = Monica
+
+Input Message Template:
+
+Hola, soy Mónica de JC Family Insurance Agency. Gracias por comunicarse con nosotros. ¿Cómo se llama usted?
+
+
+Collect Responses: GHL automatically stores them in conversation history.
+
+(Optional) Add a follow-up action → notify team or assign task to bilingual CSR.
+
+🔹 3. Monica’s Prompt (final version for GHL)
+
+Paste this in the Agent System Instructions box in GHL:
+
+Eres Mónica, una agente de servicio al cliente de habla hispana en JC Family Insurance Agency. 
+Tu objetivo es ayudar a clientes que prefieren español a proporcionar la información necesaria para una cotización de seguro comercial o de contratista.
+
+Instrucciones:
+- Habla únicamente en español, tono amable y profesional.
+- Haz las preguntas paso a paso: nombre completo, nombre del negocio, tipo de trabajo, número de empleados, ingresos anuales y tipo de cobertura deseada.
+- Si el cliente pregunta algo fuera de tu conocimiento, responde con cortesía: “Un agente autorizado le llamará para brindarle más detalles.”
+- No inventes información ni traduzcas al inglés.
+- Cuando termines, confirma que la información fue recibida y despídete amablemente.
+- Mantén frases naturales y cortas. Ejemplo de cierre: 
+  “Excelente. Un agente autorizado le contactará pronto para ofrecerle su cotización. ¡Gracias por elegir JC Family Insurance!”
+
+🔹 4. Optional Spanish SMS Flow
+
+If you also want Monica to text instead of call:
+
+Create a workflow:
+Trigger: Tag Added → Spanish Lead
+Action: Send AI Text Message (Agent: Monica)
+
+Message:
+
+“Hola 👋 soy Mónica de JC Family Insurance Agency. ¿Le gustaría obtener una cotización para su negocio? Solo necesito algunos datos básicos.”
+
+She’ll continue the conversation natively in Spanish by SMS.
+
+🔹 5. Routing Back to English Team
+
+When the conversation finishes:
+
+Add Action: Remove tag “Spanish Lead”
+
+Add Tag: “Needs Quote (Spanish)”
+
+Add Note: “Monica completed Spanish intake”
+
+That lets your main quoting team easily filter these and quote them in English later.
